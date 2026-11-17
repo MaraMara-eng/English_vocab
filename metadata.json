@@ -1,0 +1,8 @@
+{
+  "name": "Remix English Vocabulary Learning App",
+  "description": "An interactive vanilla JavaScript web application for learning and mastering English vocabulary through flashcards, quizzes, and spaced practice.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

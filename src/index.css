@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f4f5fb;
+  --sf: #ffffff;
+  --tx: #1b2140;
+  --mu: #6b7194;
+  --ln: #e3e6f3;
+  --ac: #5b5bf0;
+  --ac2: #14b8a6;
+  --ok: #16a34a;
+  --okb: #e3f8ea;
+  --no: #dc2626;
+  --nob: #fde8e8;
+  --wn: #b45309;
+  --wnb: #fff3d6;
+  --sh: 0 8px 30px rgba(40, 50, 120, 0.08);
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1220;
+    --sf: #181c33;
+    --tx: #eceffd;
+    --mu: #9aa1c8;
+    --ln: #2a3050;
+    --ac: #8b8bff;
+    --ac2: #2dd4bf;
+    --ok: #4ade80;
+    --okb: #14301f;
+    --no: #ff8a8a;
+    --nob: #3b1a1c;
+    --wn: #fbbf24;
+    --wnb: #3a2f12;
+    --sh: 0 8px 30px rgba(0, 0, 0, 0.35);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1220;
+  --sf: #181c33;
+  --tx: #eceffd;
+  --mu: #9aa1c8;
+  --ln: #2a3050;
+  --ac: #8b8bff;
+  --ac2: #2dd4bf;
+  --ok: #4ade80;
+  --okb: #14301f;
+  --no: #ff8a8a;
+  --nob: #3b1a1c;
+  --wn: #fbbf24;
+  --wnb: #3a2f12;
+  --sh: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f5fb;
+  --sf: #ffffff;
+  --tx: #1b2140;
+  --mu: #6b7194;
+  --ln: #e3e6f3;
+  --ac: #5b5bf0;
+  --ac2: #14b8a6;
+  --ok: #16a34a;
+  --okb: #e3f8ea;
+  --no: #dc2626;
+  --nob: #fde8e8;
+  --wn: #b45309;
+  --wnb: #fff3d6;
+  --sh: 0 8px 30px rgba(40, 50, 120, 0.08);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans Armenian", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Base button and form elements */
+button {
+  cursor: pointer;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  border-radius: 12px;
+  padding: 9px 14px;
+  transition: transform 0.08s, box-shadow 0.15s, background 0.15s;
+  color: inherit;
+  font: inherit;
+}
+
+button:hover {
+  box-shadow: var(--sh);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.p {
+  background: linear-gradient(135deg, var(--ac), var(--ac2));
+  color: #fff;
+  border: 0;
+  font-weight: 600;
+}
+
+button.sm {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+input,
+select,
+textarea {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 12px;
+  padding: 9px 12px;
+  color: inherit;
+  font: inherit;
+  width: 100%;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ac);
+  outline-offset: 2px;
+}
+
+.card {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: var(--sh);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--ac) 14%, transparent);
+  color: var(--ac);
+}
+
+.chip.ok {
+  background: var(--okb);
+  color: var(--ok);
+}
+
+.chip.no {
+  background: var(--nob);
+  color: var(--no);
+}
+
+.chip.wn {
+  background: var(--wnb);
+  color: var(--wn);
+}
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--ln);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--sf);
+}
+
+.seg button {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.seg button.on {
+  background: var(--ac);
+  color: #ffffff;
+}
+
+.bar {
+  height: 6px;
+  background: var(--ln);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-weak {
+  background-color: var(--no) !important;
+}
+
+.strength-fair {
+  background-color: var(--wn) !important;
+}
+
+.strength-good {
+  background-color: #3b82f6 !important;
+}
+
+.strength-strong {
+  background-color: var(--ok) !important;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 440px;
+}
+
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--mu);
+  text-align: left;
+}
+
+.field-label span.req {
+  color: var(--ac);
+  font-weight: 600;
+}
