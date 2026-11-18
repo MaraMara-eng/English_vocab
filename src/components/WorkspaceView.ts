@@ -299,6 +299,9 @@ export class WorkspaceView {
               <button id="headerInstallBtn" class="sm" title="Install Vocab Quest App" style="display: none; align-items: center; gap: 5px; background: color-mix(in srgb, var(--ac) 15%, var(--sf)); color: var(--ac); border-color: var(--ac);">
                 <span>📱</span> <span>Install App</span>
               </button>
+              <a href="/dist.zip" download="vocab_quest_production.zip" class="sm" title="Download Complete Production App (.zip)" style="display: inline-flex; align-items: center; gap: 5px; text-decoration: none; background: color-mix(in srgb, var(--ac2) 15%, var(--sf)); color: var(--ac2); border: 1px solid var(--ln); border-radius: 8px; padding: 5px 10px; font-size: 0.85rem;">
+                <span>📥</span> <span>Download (.zip)</span>
+              </a>
               <button id="themeToggleBtn" class="sm" title="Toggle Theme">
                 ${this.settings?.theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
               </button>
@@ -459,8 +462,11 @@ export class WorkspaceView {
                     100% independent of AI Studio with a built-in IndexedDB database. Works offline and installable on iOS, Android, macOS, Windows & cross-browser.
                   </p>
                   <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <button id="cardInstallBtn" class="p" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600;">
-                      <span>📲</span> Install App Now
+                    <a href="/dist.zip" download="vocab_quest_production.zip" class="p" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; text-decoration: none; text-align: center;">
+                      <span>📥</span> Download Complete Production App (.zip)
+                    </a>
+                    <button id="cardInstallBtn" class="sm" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                      <span>📲</span> Install App (PWA)
                     </button>
                     <button id="openInstallGuideBtn" class="sm" style="display: flex; align-items: center; justify-content: center; gap: 6px;">
                       <span>📖</span> View Standalone Installation Guide
